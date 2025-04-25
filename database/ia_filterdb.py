@@ -229,4 +229,4 @@ async def get_file_details(query):
     filter = {'_id': query}  # Use _id instead of file_id
     cursor = Media.find(filter)
     filedetails = await cursor.to_list(length=1)
-    return filedetails￼Enter
+    return filedetails
