@@ -67,7 +67,7 @@ async def save_file(message, media):
         file_caption = clean_string(message.caption)
 
         file = Media(
-            _id=file_id,  # Use _id instead of file_id
+            _id=file_id,
             file_name=file_name,
             file_size=media.file_size,
             caption=file_caption
@@ -78,7 +78,6 @@ async def save_file(message, media):
     except Exception as e:
         logging.exception(f"Unexpected error while preparing file: {e}")
         return 'err'
-    else:
 import logging
 import re
 import base64
@@ -148,7 +147,7 @@ async def save_file(message, media):
         file_caption = clean_string(message.caption)
 
         file = Media(
-            _id=file_id,  # Use _id instead of file_id
+            _id=file_id,
             file_name=file_name,
             file_size=media.file_size,
             caption=file_caption
@@ -226,7 +225,7 @@ async def delete_files(query):
 
 # For getting full file details
 async def get_file_details(query):
-    filter = {'_id': query}  # Use _id instead of file_id
+    filter = {'_id': query}
     cursor = Media.find(filter)
     filedetails = await cursor.to_list(length=1)
     return filedetails
